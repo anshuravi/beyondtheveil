@@ -13,7 +13,7 @@ body {
 }
 
 #medievalImage {
-    width: 70%;
+    width: 40%;
     max-width: 800px; /* Set a maximum width for the images */
     height: auto;
     margin: 0 auto; /* Center the image horizontally */
