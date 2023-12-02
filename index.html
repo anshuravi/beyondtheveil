@@ -1,28 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Image Gallery</title>
-	<style>
-		img {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			width: 50%;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Viewer</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #image-container {
+      text-align: center;
+    }
+    #main-image {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+  </style>
 </head>
 <body>
-	</button><img id="medievalImage" src="arrow.png" alt="Medieval Image">
-	<script>
-		var images = ["medieval_images/medieval_image1.png", "medieval_images/medieval_image2.png", "image4.jpg"];
-		var index = 0;
-		function nextImage() {
-			index++;
-			if (index >= images.length) {
-				index = 0;
-			}
-			document.getElementsByTagName("img")[0].src = images[index];
-		}
-	</script>
+
+<div id="image-container">
+  <img id="main-image" src="" alt="Image Viewer">
+  <br>
+  <button onclick="previousImage()">Previous</button>
+  <button onclick="nextImage()">Next</button>
+</div>
+
+<script>
+  const images = [
+    'medieval_images/medieval_image1.png',
+    'medieval_images/medieval_image2.png',
+    'image3.jpg',
+    // Add more image URLs as needed
+  ];
+
+  let currentIndex = 0;
+  const mainImage = document.getElementById('main-image');
+
+  function showImage(index) {
+    if (index >= 0 && index < images.length) {
+      currentIndex = index;
+      mainImage.src = images[currentIndex];
+    }
+  }
+
+  function nextImage() {
+    showImage(currentIndex + 1);
+  }
+
+  function previousImage() {
+    showImage(currentIndex - 1);
+  }
+
+  // Show the first image on page load
+  showImage(currentIndex);
+</script>
+
 </body>
 </html>
