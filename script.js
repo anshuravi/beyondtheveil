@@ -7,5 +7,5 @@ function turnPage() {
     currentPage = currentPage === maxPages ? 1 : currentPage + 1;
 
     // Update the image source based on the current page
-    document.getElementById('medievalImage').src = `medieval_image${currentPage}.jpg`;
+    document.getElementById('medievalImage').src = `fairy${currentPage}.png`;
 }
