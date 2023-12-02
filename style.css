@@ -13,11 +13,12 @@ body {
 }
 
 #medievalImage {
-    width: 40%;
+    width: 100%;
     max-width: 800px; /* Set a maximum width for the images */
     height: auto;
     margin: 0 auto; /* Center the image horizontally */
     display: block; /* Remove default inline spacing */
+    max-height: 80vh; /* Set a maximum height for the images */
 }
 
 .arrow-container {
