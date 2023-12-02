@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Medieval Website</title>
+	<title>Image Gallery</title>
+	<style>
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+	</style>
 </head>
 <body>
-    <div class="container">
-        <img id="medievalImage" src="medieval_images/medieval_image1.png" alt="Medieval Image">
-        <div class="arrow-container">
-            <img src="arrow.png" id="pageTurnArrow" alt="Page Turn Arrow" onclick="turnPage()">
-        </div>
-    </div>
-    <div class="container">
-        <img id="medievalImage" src="medieval_images/medieval_image2.png" alt="Medieval Image">
-        <div class="arrow-container">
-            <img src="arrow.png" id="pageTurnArrow" alt="Page Turn Arrow" onclick="turnPage()">
-        </div>
-    </div>
-    <script src="script.js"></script>
+	</button><img id="medievalImage" src="medieval_images/medieval_image1.png" alt="Medieval Image">
+	<script>
+		var images = ["medieval_images/medieval_image2.png", "image3.jpg", "image4.jpg"];
+		var index = 0;
+		function nextImage() {
+			index++;
+			if (index >= images.length) {
+				index = 0;
+			}
+			document.getElementsByTagName("img")[0].src = images[index];
+		}
+	</script>
 </body>
 </html>
