@@ -12,7 +12,7 @@
       height: 100vh;
       margin: 0;
       background-image: url('castle.jpg');
-      background-size: 60% 60%; /* Set width and height in percentages */
+      background-size: 100% 100%; /* Set width and height in percentages */
       background-position: center;
     }
     #image-container {
@@ -26,12 +26,16 @@
 </head>
 <body>
 
-<div id="image-container">
-  <img id="main-image" src="" alt="Image Viewer">
-  <br>
-  <button onclick="previousImage()">Previous</button>
-  <button onclick="nextImage()">Next</button>
-</div>
+    <div id="image-container">
+        <img id="main-image" src="" alt="Image Viewer">
+        <br>
+        <button class="nav-button" onclick="previousImage()">
+          <img src="previous_button.png" alt="Previous">
+        </button>
+        <button class="nav-button" onclick="nextImage()">
+          <img src="arrow.png" alt="Next">
+        </button>
+      </div>
 
 <script>
   const images = [
