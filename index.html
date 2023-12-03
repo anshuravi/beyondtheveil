@@ -61,17 +61,13 @@
         <div id="image-container">
           <img id="main-image" src="" alt="Image Viewer" >
           <br>
-        
+          <button class="nav-button" onclick="previousImage()">
+            <img src="previous.png" alt="Previous" >
+          </button>
+          <button class="nav-button" onclick="nextImage()">
+            <img src="arrow.png" alt="Next">
+          </button>
         </div>
-
-    <div id=".nav-container">
-    <button class="nav-button" onclick="previousImage()">
-        <img src="previous.png" alt="Previous" >
-      </button>
-      <button class="nav-button" onclick="nextImage()">
-        <img src="arrow.png" alt="Next">
-      </button>
-    </div>
 
 <script>
   const images = [
