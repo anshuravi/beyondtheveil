@@ -26,7 +26,16 @@
       max-height: 80vh;
     }
 
- 
+    .nav-container {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
     .nav-button {
       cursor: pointer;
       border: none;
@@ -36,6 +45,8 @@
       outline: none;
       border-radius: 50%;
       overflow: hidden;
+      display: flex;
+      flex-direction: row;
       margin-left: 10px; /* Adjusted margin for space between image and buttons */
     }
 
