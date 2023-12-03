@@ -58,6 +58,7 @@
     <body>
         <div id="image-container">
           <img id="main-image" src="" alt="Image Viewer" >
+          <button id="audio-button" onclick="playAudio()">Play Audio</button>
         </div>
         <div id="nav-container">
             <button class="nav-button" onclick="previousImage()">
@@ -76,6 +77,12 @@
     'medieval_images/medieval_image4.png',
     // Add more image URLs as needed
   ];
+  const audioFiles = [
+      'vampire.mp3',
+      'dragon.mp3',
+      'mermaid.mp3',
+      // Add more audio file URLs as needed
+    ];
 
   let currentIndex = 0;
   const mainImage = document.getElementById('main-image');
@@ -86,6 +93,11 @@
       mainImage.src = images[currentIndex];
     }
   }
+
+  function playAudio() {
+      const audio = new Audio(audioFiles[currentIndex]);
+      audio.play();
+    }
 
   function nextImage() {
     showImage(currentIndex + 1);
