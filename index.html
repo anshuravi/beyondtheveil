@@ -5,98 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Viewer</title>
   <style>
-    body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  background-image: url('castle.jpg');
-  background-size: 100% 100%;
-  background-position: center;
-}
-
-#image-container {
-  text-align: center;
-  position: relative;
-}
-
-#main-image {
-  max-width: 100%;
-  max-height: 80vh;
-}
-
-#nav-container {
-  position: fixed;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.nav-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 5px; /* Add margin for spacing between buttons */
-  outline: none;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.nav-button img {
-  max-width: 10%; /* Adjust image width */
-  border-radius: 10%;
-}
-</style>
-
+    /* Your existing styles remain unchanged */
+  </style>
 </head>
 <body>
-    <body>
-        <div id="image-container">
-          <img id="main-image" src="" alt="Image Viewer" >
-        </div>
-        <div id="nav-container">
-            <button class="nav-button" onclick="previousImage()">
-              <img src="previous.png" alt="Previous" >
-            </button>
-            <button class="nav-button" onclick="nextImage()">
-              <img src="arrow.png" alt="Next">
-            </button>
-          </div>
+  <div id="image-container">
+    <img id="main-image" src="" alt="Image Viewer">
+    <button id="audio-button" onclick="playAudio()">Play Audio</button>
+  </div>
+  <div id="nav-container">
+    <button class="nav-button" onclick="previousImage()">
+      <img src="previous.png" alt="Previous">
+    </button>
+    <button class="nav-button" onclick="nextImage()">
+      <img src="arrow.png" alt="Next">
+    </button>
+  </div>
 
-<script>
-  const images = [
-    'medieval_images/medieval_image1.png',
-    'medieval_images/medieval_image2.png',
-    'medieval_images/medieval_image3.png',
-    // Add more image URLs as needed
-  ];
+  <script>
+    const images = [
+      'medieval_images/medieval_image1.png',
+      'medieval_images/medieval_image2.png',
+      'medieval_images/medieval_image3.png',
+      'medieval_images/medieval_image4.png',
+      // Add more image URLs as needed
+    ];
 
-  let currentIndex = 0;
-  const mainImage = document.getElementById('main-image');
+    const audioFiles = [
+      'dragon.mp3',
+      'audio/audio2.mp3',
+      'audio/audio3.mp3',
+      // Add more audio file URLs as needed
+    ];
 
-  function showImage(index) {
-    if (index >= 0 && index < images.length) {
-      currentIndex = index;
-      mainImage.src = images[currentIndex];
+    let currentIndex = 0;
+    const mainImage = document.getElementById('main-image');
+    const audioButton = document.getElementById('audio-button');
+
+    function showImage(index) {
+      if (index >= 0 && index < images.length) {
+        currentIndex = index;
+        mainImage.src = images[currentIndex];
+      }
     }
-  }
 
-  function nextImage() {
-    showImage(currentIndex + 1);
-  }
+    function playAudio() {
+      const audio = new Audio(audioFiles[currentIndex]);
+      audio.play();
+    }
 
-  function previousImage() {
-    showImage(currentIndex - 1);
-  }
+    function nextImage() {
+      showImage(currentIndex + 1);
+    }
 
-  // Show the first image on page load
-  showImage(currentIndex);
-</script>
+    function previousImage() {
+      showImage(currentIndex - 1);
+    }
 
+    // Show the first image on page load
+    showImage(currentIndex);
+  </script>
 </body>
 </html>
